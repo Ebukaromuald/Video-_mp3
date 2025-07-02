@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your MP3 Files</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ff69b4, #ffb6c1); /* hot pink */
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 60px auto;
+      background-color: #2f3542;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #00e676;
+      margin-bottom: 20px;
+    }
+
+    .download-link {
+      display: block;
+      background-color: #00bcd4;
+      color: white;
+      text-decoration: none;
+      padding: 12px 20px;
+      margin: 10px auto;
+      width: 80%;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .download-link:hover {
+      background-color: #0097a7;
+    }
+
+    .back-btn {
+      margin-top: 30px;
+      display: inline-block;
+      color: #bbb;
+      text-decoration: underline;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎧 Your MP3 Files Are Ready</h1>
+    <p>Click below to download:</p>
+
+    {% for file in files %}
+      <a class="download-link" href="{{ url_for('static', filename='mp3s/' + file) }}" download>{{ file }}</a>
+    {% endfor %}
+
+    <a class="back-btn" href="{{ url_for('index') }}">← Convert Another Video</a>
+  </div>
+</body>
+</html>
