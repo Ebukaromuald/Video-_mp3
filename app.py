@@ -23,7 +23,11 @@ def clean_old_files(folder, age_limit_seconds=3600):
             if now - os.path.getmtime(filepath) > age_limit_seconds:
                 os.remove(filepath)
 
+HEAD
 @app.route('/', methods=['GET', 'POST', 'HEAD'])
+
+@app.route('/', methods=['GET', 'POST'])
+f36163223e546af23dcc20c207161726e928e842
 def index():
     clean_old_files(app.config['UPLOAD_FOLDER'])
 

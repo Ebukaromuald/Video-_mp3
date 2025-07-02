@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Download Your MP3s</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #1e1e2f, #23232f);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2em;
+      color: #ffca28;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    li {
+      margin: 10px 0;
+      text-align: center;
+    }
+
+    a.download-button {
+      display: inline-block;
+      background: #00e676;
+      color: #000;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    a.download-button:hover {
+      background: #00c853;
+    }
+
+    .footer-links {
+      margin-top: 30px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .footer-links a {
+      color: #90caf9;
+      text-decoration: underline;
+      margin: 0 10px;
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 1.6em;
+      }
+
+      a.download-button {
+        width: 100%;
+        box-sizing: border-box;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>✅ Your MP3 File(s) Are Ready</h1>
+  <ul>
+    {% for link in links %}
+      <li><a class="download-button" href="{{ link }}" download>⬇️ Download MP3</a></li>
+    {% endfor %}
+  </ul>
+
+  <div class="footer-links">
+    <a href="/">← Back to Home</a> |
+    <a href="/contact">Contact Us</a> |
+    <a href="/support">Support</a>
+  </div>
+</body>
+</html>

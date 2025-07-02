@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MP4 to MP3 Converter</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #1e1e2f, #23232f);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-size: 2em;
+      text-align: center;
+      color: #ffca28;
+    }
+
+    p {
+      max-width: 90%;
+      text-align: center;
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+
+    form {
+      width: 100%;
+      max-width: 400px;
+      background: #2c2c3e;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00000055;
+    }
+
+    input[type="file"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      background: #fff;
+      color: #000;
+      border-radius: 6px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #00e676;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #00c853;
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 1.5em;
+      }
+
+      button {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎧 Free MP4 to MP3 Converter</h1>
+  <p>Select your video(s) to extract high-quality MP3 audio. You can enhance the volume too!</p>
+  <form method="POST" enctype="multipart/form-data">
+    <input type="file" name="videos" multiple required>
+    <label>
+      <input type="checkbox" name="boost_volume"> Enhance Audio Volume 🔊
+    </label>
+    <button type="submit">Convert to MP3</button>
+  </form>
+
+  <footer>
+    <p><a href="/contact">Contact Us</a> | <a href="/support">Support</a></p>
+  </footer>
+</body>
+</html>
