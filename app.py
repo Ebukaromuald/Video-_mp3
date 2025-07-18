@@ -68,6 +68,10 @@ def download_file(filename):
 def contact():
     return render_template('contact.html')
 
+@app.route("/privacy")
+~def privacy():
+    return render_template("privacy.html")
+
 @app.route('/support')
 def support():
     return render_template('support.html')
